@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
+  const [value, setValue] = useState("")
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Welcome to CI/CD Trainning App!</Text>
+      <TextInput 
+        placeholder={"...what is your name"}
+        onChangeText={(name) => setValue(name)}
+      />
       <StatusBar style="auto" />
     </View>
   );
